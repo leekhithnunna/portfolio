@@ -28,9 +28,48 @@
   <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/visitorGate.css" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===== VISITOR GATE ===== -->
+  <div class="visitor-gate" id="visitor-gate" role="dialog" aria-modal="true" aria-labelledby="visitor-gate-title">
+    <div class="visitor-gate__overlay"></div>
+    <div class="visitor-gate__dialog" role="document">
+      <h2 class="visitor-gate__title" id="visitor-gate-title">Welcome 👋</h2>
+      <p class="visitor-gate__subtitle">Quick intro before you look around — takes 10 seconds.</p>
+
+      <form class="visitor-gate__form" id="visitor-gate-form" novalidate>
+        <div class="form__group">
+          <label for="visitor-name">Name</label>
+          <input type="text" id="visitor-name" name="name" autocomplete="name" required />
+        </div>
+
+        <div class="form__group">
+          <label for="visitor-email">Email</label>
+          <input type="email" id="visitor-email" name="email" autocomplete="email" required />
+        </div>
+
+        <div class="form__group">
+          <label for="visitor-purpose">Purpose of visit</label>
+          <select id="visitor-purpose" name="purpose">
+            <option value="Recruiter">Recruiter</option>
+            <option value="Hiring Manager">Hiring Manager</option>
+            <option value="Fellow Student">Fellow Student</option>
+            <option value="Networking">Networking</option>
+            <option value="Just Browsing">Just Browsing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn--primary visitor-gate__submit" id="visitor-gate-submit">Continue</button>
+        <p class="visitor-gate__status" id="visitor-gate-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <button type="button" class="visitor-gate__skip" id="visitor-gate-skip">Skip and browse anonymously</button>
+    </div>
+  </div>
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">

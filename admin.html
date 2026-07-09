@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Access | Nunna Leekhith Sri Krishna</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <main class="admin-page">
+    <div class="admin-card" id="admin-login-card">
+      <h1 class="admin-card__title">Admin Access</h1>
+
+      <form class="admin-card__form" id="admin-login-form" novalidate>
+        <div class="form__group">
+          <label for="admin-email">Email</label>
+          <input type="email" id="admin-email" name="email" autocomplete="username" required />
+        </div>
+
+        <div class="form__group">
+          <label for="admin-password">Password</label>
+          <input type="password" id="admin-password" name="password" autocomplete="current-password" required />
+        </div>
+
+        <button type="submit" class="btn btn--primary admin-card__submit">Login</button>
+        <p class="admin-card__error" id="admin-login-error" role="alert"></p>
+      </form>
+    </div>
+
+    <div class="admin-card admin-card__success" id="admin-success-card" hidden>
+      <h2>Access granted.</h2>
+      <p>
+        Visitor submissions are being sent to your email via Formspree — check your inbox or your Formspree
+        dashboard at formspree.io to view all visitor logs (name, email, purpose, timestamp, referrer, browser info).
+      </p>
+      <a class="btn btn--secondary" href="https://formspree.io/forms" target="_blank" rel="noopener noreferrer">Open Formspree Dashboard</a>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

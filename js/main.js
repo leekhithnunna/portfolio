@@ -7,6 +7,7 @@ import { initScrollReveal } from './scrollReveal.js';
 import { initSkillsAnimation } from './skillsAnimation.js';
 import { initProjectsFilter } from './projectsFilter.js';
 import { initContactForm } from './contactForm.js';
+import { initVisitorGate } from './visitorGate.js';
 import { achievementsData } from './data/achievements.js';
 
 function renderAchievements() {
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAchievements();
   setFooterYear();
 
+  initVisitorGate();
   initNavbar();
   initThemeToggle();
   initTypingEffect();
