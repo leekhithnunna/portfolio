@@ -27,8 +27,7 @@ https://leekhithnunna.github.io/portfolio/
 portfolio/
 ├── index.html              # Single-page markup, links every stylesheet/script
 ├── assets/
-│   ├── images/              # profile.jpg, favicon.ico
-│   └── resume/               # Leekhith_Resume.pdf
+│   └── images/              # profile.jpg, favicon.ico
 ├── css/
 │   ├── base.css              # reset, variables, typography, theme tokens
 │   ├── layout.css             # containers, section spacing
@@ -78,8 +77,12 @@ All editable content lives in `js/data/`:
 - `projects.js` — project cards (set `githubLink` once repos are public)
 - `achievements.js` — achievements/certifications timeline
 
-Swap `assets/images/profile.jpg`, `assets/images/favicon.ico`, and
-`assets/resume/Leekhith_Resume.pdf` with your real files (same filenames).
+Swap `assets/images/profile.jpg` and `assets/images/favicon.ico` with your real files
+(same filenames).
+
+The resume is intentionally **not** hosted in this public repo — the "Request Resume"
+button opens a pre-filled `mailto:` link so visitors email a request instead of
+downloading it directly. Send the PDF manually once you've screened the request.
 
 ## Deployment (GitHub Pages)
 
