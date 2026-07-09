@@ -7,6 +7,11 @@
 const ADMIN_EMAIL = "leekhithnunna@gmail.com";
 const ADMIN_PASSWORD = "Leekhith@1269";
 
+// Must match VISITOR_LOG_KEY in js/visitorGate.js. Entries are only visible
+// here when admin.html is opened on the same browser/device that captured
+// them — localStorage does not sync across visitors' devices.
+const VISITOR_LOG_KEY = 'visitorGateSubmissions';
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('admin-login-form');
   const errorEl = document.getElementById('admin-login-error');
@@ -24,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       errorEl.textContent = '';
       loginCard.hidden = true;
       successCard.hidden = false;
+      renderVisitorLog();
     } else {
       errorEl.textContent = 'Invalid email or password';
       passwordInput.value = '';
@@ -31,3 +37,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+function renderVisitorLog() {
+  const tableBody = document.getElementById('visitor-log-body');
+  const emptyMsg = document.getElementById('visitor-log-empty');
+  let log = [];
+
+  try {
+    log = JSON.parse(localStorage.getItem(VISITOR_LOG_KEY) || '[]');
+  } catch {
+    log = [];
+  }
+
+  tableBody.innerHTML = '';
+
+  if (log.length === 0) {
+    emptyMsg.hidden = false;
+    return;
+  }
+
+  emptyMsg.hidden = true;
+
+  log.slice().reverse().forEach((entry) => {
+    const row = document.createElement('tr');
+    [entry.name, entry.email, entry.purpose, entry.timestamp, entry.referrer, entry.userAgent].forEach((value) => {
+      const cell = document.createElement('td');
+      cell.textContent = value;
+      row.appendChild(cell);
+    });
+    tableBody.appendChild(row);
+  });
+}

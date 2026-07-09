@@ -1,8 +1,11 @@
 // Visitor gate — full-screen entry popup shown on every fresh page load.
-// State is tracked in-memory only (no localStorage/sessionStorage), so the
-// gate intentionally reappears on every reload.
+// The "dismissed" flag is tracked in-memory only, so the gate intentionally
+// reappears on every reload. Submissions themselves are persisted to
+// localStorage under VISITOR_LOG_KEY so admin.html can list them — note this
+// means entries are only visible from the same browser/device that captured
+// them, not centrally across all site visitors.
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const VISITOR_LOG_KEY = 'visitorGateSubmissions';
 
 let dismissed = false;
 
@@ -13,7 +16,6 @@ export function initVisitorGate() {
   const form = document.getElementById('visitor-gate-form');
   const status = document.getElementById('visitor-gate-status');
   const skipLink = document.getElementById('visitor-gate-skip');
-  const submitBtn = document.getElementById('visitor-gate-submit');
 
   document.body.classList.add('visitor-gate-open');
 
@@ -30,24 +32,19 @@ export function initVisitorGate() {
 
     const purpose = document.getElementById('visitor-purpose').value;
 
-    submitBtn.disabled = true;
-    setStatus('Submitting…', '');
-
-    submitVisitorEntry({ name, email, purpose }).finally(() => {
-      closeGate();
-    });
+    saveVisitorEntry({ name, email, purpose });
+    closeGate();
   });
 
   skipLink.addEventListener('click', (event) => {
     event.preventDefault();
 
-    submitVisitorEntry({
+    saveVisitorEntry({
       name: 'Not provided',
       email: 'Not provided',
       purpose: 'Skipped/Anonymous',
-    }).finally(() => {
-      closeGate();
     });
+    closeGate();
   });
 
   function closeGate() {
@@ -63,8 +60,8 @@ export function initVisitorGate() {
   }
 }
 
-function submitVisitorEntry({ name, email, purpose }) {
-  const payload = {
+function saveVisitorEntry({ name, email, purpose }) {
+  const entry = {
     name,
     email,
     purpose,
@@ -73,11 +70,11 @@ function submitVisitorEntry({ name, email, purpose }) {
     userAgent: navigator.userAgent,
   };
 
-  // Fire-and-forget: never block the visitor from reaching the homepage,
-  // even if the Formspree endpoint is unreachable or still a placeholder.
-  return fetch(FORMSPREE_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify(payload),
-  }).catch(() => {});
+  try {
+    const log = JSON.parse(localStorage.getItem(VISITOR_LOG_KEY) || '[]');
+    log.push(entry);
+    localStorage.setItem(VISITOR_LOG_KEY, JSON.stringify(log));
+  } catch {
+    // Storage unavailable (e.g. private browsing) — never block the visitor.
+  }
 }

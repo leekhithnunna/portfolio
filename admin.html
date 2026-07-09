@@ -33,13 +33,29 @@
       </form>
     </div>
 
-    <div class="admin-card admin-card__success" id="admin-success-card" hidden>
+    <div class="admin-card admin-card__success admin-card--log" id="admin-success-card" hidden>
       <h2>Access granted.</h2>
       <p>
-        Visitor submissions are being sent to your email via Formspree — check your inbox or your Formspree
-        dashboard at formspree.io to view all visitor logs (name, email, purpose, timestamp, referrer, browser info).
+        Visitor gate submissions captured on this browser (name, email, purpose, timestamp, referrer, browser info).
+        Entries are stored locally and only show up here on the same device that captured them.
       </p>
-      <a class="btn btn--secondary" href="https://formspree.io/forms" target="_blank" rel="noopener noreferrer">Open Formspree Dashboard</a>
+
+      <div class="visitor-log__table-wrap">
+        <table class="visitor-log__table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Purpose</th>
+              <th>Timestamp</th>
+              <th>Referrer</th>
+              <th>Browser Info</th>
+            </tr>
+          </thead>
+          <tbody id="visitor-log-body"></tbody>
+        </table>
+        <p class="visitor-log__empty" id="visitor-log-empty" hidden>No visitor submissions yet on this browser.</p>
+      </div>
     </div>
   </main>
 

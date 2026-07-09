@@ -89,3 +89,48 @@
 .admin-card[hidden] {
   display: none;
 }
+
+/* Visitor log table — success card widens to fit tabular data */
+.admin-card--log {
+  max-width: 960px;
+}
+
+.visitor-log__table-wrap {
+  overflow-x: auto;
+}
+
+.visitor-log__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--fs-sm);
+}
+
+.visitor-log__table th,
+.visitor-log__table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.visitor-log__table th {
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.visitor-log__table td {
+  color: var(--color-text-primary);
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.visitor-log__empty {
+  padding: var(--space-lg) 0;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
