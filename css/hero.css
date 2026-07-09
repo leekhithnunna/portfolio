@@ -1,0 +1,94 @@
+/* ==========================================================================
+   hero.css — landing section
+   ========================================================================== */
+
+.hero {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero__inner {
+  max-width: 780px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-sm);
+}
+
+.hero__name {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-sm);
+}
+
+.hero__tagline {
+  font-size: var(--fs-2xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  min-height: 1.3em;
+}
+
+.typing-target {
+  color: var(--color-text-secondary);
+}
+
+.typing-cursor {
+  color: var(--color-accent);
+  animation: blink 1s step-start infinite;
+}
+
+.hero__intro {
+  max-width: 560px;
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-xl);
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.hero__scroll-cue {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 42px;
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.hero__scroll-cue span {
+  width: 4px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  animation: scroll-cue 1.6s ease infinite;
+}
+
+@media (max-width: 600px) {
+  .hero__name {
+    font-size: var(--fs-2xl);
+  }
+
+  .hero__tagline {
+    font-size: var(--fs-lg);
+  }
+
+  .hero__cta {
+    flex-direction: column;
+  }
+
+  .hero__cta .btn {
+    width: 100%;
+  }
+}

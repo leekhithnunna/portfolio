@@ -1,0 +1,71 @@
+/* ==========================================================================
+   achievements.css — vertical timeline
+   ========================================================================== */
+
+.achievements__timeline {
+  position: relative;
+  max-width: 760px;
+  margin-inline: auto;
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-border);
+}
+
+.achievement-item {
+  position: relative;
+  padding: 0 0 var(--space-xl) var(--space-lg);
+}
+
+.achievement-item:last-child {
+  padding-bottom: 0;
+}
+
+.achievement-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-lg) - 7px);
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 3px solid var(--color-accent);
+}
+
+.achievement-item__date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  margin-bottom: var(--space-2xs);
+  display: block;
+}
+
+.achievement-item__title {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-2xs);
+}
+
+.achievement-item__org {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.achievement-item__desc {
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 600px) {
+  .achievements__timeline {
+    padding-left: var(--space-md);
+  }
+
+  .achievement-item {
+    padding-left: var(--space-md);
+  }
+
+  .achievement-item::before {
+    left: calc(-1 * var(--space-md) - 7px);
+  }
+}
