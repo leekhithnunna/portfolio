@@ -91,6 +91,27 @@
   gap: var(--space-md);
 }
 
+.navbar__github {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.navbar__github svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.navbar__github:hover {
+  background: rgba(var(--color-accent-rgb), 0.1);
+  color: var(--color-accent);
+}
+
 /* Theme toggle button */
 .theme-toggle {
   position: relative;

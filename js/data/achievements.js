@@ -36,4 +36,10 @@ export const achievementsData = [
     date: '2024',
     description: 'Completed a bootcamp covering Git workflows and CI/CD pipelines.',
   },
+  {
+    title: 'ACM Student Chapter Member',
+    org: 'Association for Computing Machinery',
+    date: '2025',
+    description: 'Active member of the ACM student chapter at Amrita Vishwa Vidyapeetham, Bengaluru.',
+  },
 ];

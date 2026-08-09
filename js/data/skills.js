@@ -2,11 +2,15 @@
 export const skillsData = [
   {
     category: 'Languages',
-    items: ['Python', 'C', 'Java', 'HTML', 'CSS', 'MySQL'],
+    items: ['Python', 'C', 'Java', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'MySQL'],
   },
   {
     category: 'AI / ML',
-    items: ['Scikit-Learn', 'OpenCV', 'NLP', 'TensorFlow (Basics)', 'Computer Vision'],
+    items: ['Scikit-Learn', 'OpenCV', 'NLP', 'TensorFlow', 'Computer Vision', 'Vision Transformers', 'Apache Spark'],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    items: ['React', 'Node.js', 'Streamlit', 'LangChain', 'Groq'],
   },
   {
     category: 'Tools',
