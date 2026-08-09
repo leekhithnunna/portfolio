@@ -1,13 +1,12 @@
-// Sticky navbar shadow, mobile menu toggle, and scroll-spy active link highlighting.
+// Sticky navbar shadow, mobile menu toggle, and current-page active link
+// highlighting (each section is its own page now, so this compares the
+// current URL against each link's href instead of scroll-spying sections).
 
 export function initNavbar() {
   const navbar = document.getElementById('navbar');
   const navToggle = document.getElementById('nav-toggle');
   const primaryNav = document.getElementById('primary-nav');
   const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
-  const sections = navLinks
-    .map((link) => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
 
   const closeMenu = () => {
     navToggle.classList.remove('is-open');
@@ -35,19 +34,9 @@ export function initNavbar() {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  if ('IntersectionObserver' in window && sections.length) {
-    const spy = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = `#${entry.target.id}`;
-          navLinks.forEach((link) => {
-            link.classList.toggle('is-active', link.getAttribute('href') === id);
-          });
-        });
-      },
-      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-    );
-    sections.forEach((section) => spy.observe(section));
-  }
+  const currentPage = (window.location.pathname.split('/').pop() || 'index.html') || 'index.html';
+  navLinks.forEach((link) => {
+    const linkPage = link.getAttribute('href').split('/').pop();
+    link.classList.toggle('is-active', linkPage === currentPage);
+  });
 }

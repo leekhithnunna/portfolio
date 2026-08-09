@@ -1,7 +1,9 @@
 # Nunna Leekhith Sri Krishna — Developer Portfolio
 
-A modular, single-page developer portfolio built with vanilla HTML, CSS, and JavaScript
+A multi-page developer portfolio built with vanilla HTML, CSS, and JavaScript
 (no frameworks, no build step) — designed for static hosting on GitHub Pages.
+Each section (Home, About, Skills, Projects, Achievements, Research, Contact) is
+its own page/dashboard rather than a single scrolling page.
 
 ## Live Site
 
@@ -25,30 +27,49 @@ https://leekhithnunna.github.io/portfolio/
 
 ```
 portfolio/
-├── index.html              # Single-page markup, links every stylesheet/script
+├── index.html               # Home dashboard — hero, intro video, links to every other page
+├── about.html                # About dashboard — bio + photo gallery
+├── skills.html                # Skills dashboard
+├── projects.html               # Projects dashboard — filterable cards + detail modal
+├── achievements.html            # Achievements timeline + certificate/document gallery
+├── research.html                # Research & publications dashboard
+├── contact.html                  # Contact dashboard — info + validated form
+├── admin.html                     # Hidden admin page (visitor log viewer)
 ├── assets/
-│   └── images/              # profile.jpg, favicon.ico
+│   ├── images/                     # favicon.ico, profile.jpg
+│   ├── gallery/                     # logo, intro video, personal photos, badges
+│   └── certificates/                 # certificate images/PDFs shown in the gallery
 ├── css/
-│   ├── base.css              # reset, variables, typography, theme tokens
-│   ├── layout.css             # containers, section spacing
-│   ├── navbar.css | hero.css | about.css | skills.css
-│   ├── projects.css | achievements.css | research.css
-│   ├── contact.css | footer.css
-│   └── animations.css         # keyframes + scroll-reveal states
+│   ├── base.css                       # reset, variables, typography, theme tokens
+│   ├── layout.css                      # containers, section spacing
+│   ├── navbar.css | hero.css | dashboard.css | about.css | skills.css
+│   ├── projects.css | achievements.css | research.css | gallery.css
+│   ├── contact.css | footer.css | admin.css | visitorGate.css
+│   └── animations.css                    # keyframes + scroll-reveal states
 └── js/
-    ├── main.js                # entry point, initializes all modules
-    ├── navbar.js               # sticky nav, mobile menu, scroll-spy
-    ├── themeToggle.js          # dark/light toggle (in-memory state)
-    ├── typingEffect.js         # animated hero tagline
-    ├── scrollReveal.js         # IntersectionObserver reveal animations
-    ├── skillsAnimation.js      # renders + animates skill tags
-    ├── projectsFilter.js       # renders cards, filter bar, detail modal
-    ├── contactForm.js          # client-side validation & UX feedback
+    ├── main.js                            # entry point, initializes all modules
+    ├── navbar.js                           # sticky nav, mobile menu, active-page link
+    ├── themeToggle.js                       # dark/light toggle (in-memory state)
+    ├── typingEffect.js                       # animated hero tagline
+    ├── scrollReveal.js                        # IntersectionObserver reveal animations
+    ├── skillsAnimation.js                      # renders + animates skill tags
+    ├── projectsFilter.js                        # renders cards, filter bar, detail modal
+    ├── contactForm.js                            # client-side validation & UX feedback
+    ├── galleryView.js                             # about.html photo grid
+    ├── certificateGallery.js                       # achievements.html certificate grid
+    ├── lightbox.js                                  # shared image lightbox
+    ├── visitorGate.js | admin.js
     └── data/
         ├── skills.js
         ├── projects.js
-        └── achievements.js
+        ├── achievements.js
+        ├── gallery.js
+        └── certificates.js
 ```
+
+Every module in `js/main.js` guards on `document.getElementById(...)` before running,
+so the same `main.js` entry point is safe to include on every page — each page only
+initializes the pieces whose markup is actually present.
 
 ## Running Locally
 
@@ -76,9 +97,12 @@ All editable content lives in `js/data/`:
 - `skills.js` — skill categories and tags
 - `projects.js` — project cards (set `githubLink` once repos are public)
 - `achievements.js` — achievements/certifications timeline
+- `gallery.js` — photo grid shown on `about.html`
+- `certificates.js` — certificate/document cards shown on `achievements.html`
 
-Swap `assets/images/profile.jpg` and `assets/images/favicon.ico` with your real files
-(same filenames).
+Swap `assets/images/profile.jpg` and `assets/images/favicon.ico`, or the files under
+`assets/gallery/` and `assets/certificates/`, with your real files (same filenames, or
+update the data files above to point at new ones).
 
 The resume is intentionally **not** hosted in this public repo — the "Request Resume"
 button opens a pre-filled `mailto:` link so visitors email a request instead of

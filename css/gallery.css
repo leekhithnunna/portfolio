@@ -1,0 +1,191 @@
+/* ==========================================================================
+   gallery.css — photo gallery grid, certificate/document grid, lightbox
+   ========================================================================== */
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.gallery-item__btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.gallery-item__btn:hover,
+.gallery-item__btn:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.gallery-item__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Certificate / document grid ---- */
+.certificate__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+.certificate-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px var(--color-shadow);
+}
+
+.certificate-card__btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.certificate-card__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.certificate-card__btn:hover img {
+  transform: scale(1.05);
+}
+
+.certificate-card__doc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  background: rgba(var(--color-accent-rgb), 0.06);
+  border: 1px dashed var(--color-border);
+  color: var(--color-accent);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.certificate-card__doc:hover {
+  border-color: var(--color-accent);
+  background: rgba(var(--color-accent-rgb), 0.12);
+}
+
+.certificate-card__doc-icon {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.certificate-card__pdf-link {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.certificate-card__pdf-link:hover {
+  text-decoration: underline;
+}
+
+.certificate-card__title {
+  font-size: var(--fs-sm);
+  color: var(--color-text-primary);
+  padding: 0 var(--space-2xs);
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox__dialog {
+  position: relative;
+  max-width: min(90vw, 900px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 60px var(--color-shadow);
+  background: var(--color-bg-elevated);
+}
+
+.lightbox__caption {
+  color: var(--color-text-heading);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.lightbox__close:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+  .lightbox__close {
+    top: var(--space-xs);
+    right: var(--space-xs);
+  }
+}

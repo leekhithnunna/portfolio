@@ -8,6 +8,20 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-lg);
+  position: relative;
+}
+
+.admin-page__back {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.admin-page__back:hover {
+  color: var(--color-accent);
 }
 
 .admin-card {

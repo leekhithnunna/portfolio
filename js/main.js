@@ -8,6 +8,8 @@ import { initSkillsAnimation } from './skillsAnimation.js';
 import { initProjectsFilter } from './projectsFilter.js';
 import { initContactForm } from './contactForm.js';
 import { initVisitorGate } from './visitorGate.js';
+import { initGalleryView } from './galleryView.js';
+import { initCertificateGallery } from './certificateGallery.js';
 import { achievementsData } from './data/achievements.js';
 
 function renderAchievements() {
@@ -57,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillsAnimation();
   initProjectsFilter();
   initContactForm();
+  initGalleryView();
+  initCertificateGallery();
 
   // Reveal must init last so dynamically-rendered [data-reveal] nodes are observed.
   initScrollReveal();
