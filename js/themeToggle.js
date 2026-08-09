@@ -1,15 +1,15 @@
 // Dark/light theme switch. Deliberately uses only in-memory state (module-scoped
-// variable) — no localStorage/sessionStorage — so theme resets to dark on reload.
+// variable) — no localStorage/sessionStorage — so theme resets to bright/light on reload.
 
-let currentTheme = 'dark';
+let currentTheme = 'light';
 
 export function initThemeToggle() {
   const root = document.documentElement;
   const toggleBtn = document.getElementById('theme-toggle');
 
-  const prefersLight =
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  currentTheme = prefersLight ? 'light' : 'dark';
+  const prefersDark =
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  currentTheme = prefersDark ? 'dark' : 'light';
   applyTheme(root, toggleBtn, currentTheme);
 
   toggleBtn.addEventListener('click', () => {

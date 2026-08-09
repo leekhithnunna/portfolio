@@ -11,10 +11,15 @@
 .skills__category {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
+
+.skills__category:nth-of-type(4n+2) { border-top-color: var(--chip-2); }
+.skills__category:nth-of-type(4n+3) { border-top-color: var(--chip-3); }
+.skills__category:nth-of-type(4n+4) { border-top-color: var(--chip-4); }
 
 .skills__category:hover {
   transform: translateY(-4px);

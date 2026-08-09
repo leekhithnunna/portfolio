@@ -3,11 +3,10 @@
    ========================================================================== */
 
 .research__list {
-  max-width: 760px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
+  align-items: start;
 }
 
 .research__item {
@@ -19,9 +18,19 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+.research__item:nth-of-type(4n+2) { border-left-color: var(--chip-2); }
+.research__item:nth-of-type(4n+3) { border-left-color: var(--chip-3); }
+.research__item:nth-of-type(4n+4) { border-left-color: var(--chip-4); }
+
 .research__item:hover {
-  transform: translateX(4px);
+  transform: translateY(-4px);
   box-shadow: 0 12px 30px var(--color-shadow);
+}
+
+@media (max-width: 860px) {
+  .research__list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .research__title {
@@ -51,6 +60,7 @@
 
 /* ---- Featured entry ---- */
 .research__item--featured {
+  grid-column: 1 / -1;
   border-color: var(--color-accent);
   border-left-width: 5px;
   box-shadow: 0 0 0 1px rgba(var(--color-accent-rgb), 0.25), 0 12px 30px var(--color-shadow);

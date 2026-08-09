@@ -88,6 +88,40 @@
   padding: 0 var(--space-2xs);
 }
 
+/* ---- IEEE CONECCT photo grid (research.html) ---- */
+.conecct-gallery {
+  margin-top: var(--space-xl);
+}
+
+.conecct-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--space-sm);
+}
+
+.conecct-gallery__btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  padding: 0;
+  cursor: pointer;
+}
+
+.conecct-gallery__btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.conecct-gallery__btn:hover img,
+.conecct-gallery__btn:focus-visible img {
+  transform: scale(1.08);
+}
+
 /* ---- Lightbox ---- */
 .lightbox {
   position: fixed;

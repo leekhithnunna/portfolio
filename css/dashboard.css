@@ -56,6 +56,19 @@
   color: var(--color-accent);
 }
 
+/* Rotate a bright accent per card so the row reads as varied, not uniform */
+.dashboard-card--1 .dashboard-card__icon { background: rgba(var(--color-accent-rgb), 0.12); color: var(--chip-1); }
+.dashboard-card--2 .dashboard-card__icon { background: rgba(0, 184, 217, 0.12); color: var(--chip-2); }
+.dashboard-card--3 .dashboard-card__icon { background: rgba(255, 107, 107, 0.12); color: var(--chip-3); }
+.dashboard-card--4 .dashboard-card__icon { background: rgba(244, 163, 0, 0.14); color: var(--chip-4); }
+.dashboard-card--5 .dashboard-card__icon { background: rgba(46, 204, 113, 0.12); color: var(--chip-5); }
+
+.dashboard-card--1:hover, .dashboard-card--1:focus-visible { border-color: rgba(var(--color-accent-rgb), 0.4); }
+.dashboard-card--2:hover, .dashboard-card--2:focus-visible { border-color: rgba(0, 184, 217, 0.4); }
+.dashboard-card--3:hover, .dashboard-card--3:focus-visible { border-color: rgba(255, 107, 107, 0.4); }
+.dashboard-card--4:hover, .dashboard-card--4:focus-visible { border-color: rgba(244, 163, 0, 0.4); }
+.dashboard-card--5:hover, .dashboard-card--5:focus-visible { border-color: rgba(46, 204, 113, 0.4); }
+
 .dashboard-card__icon svg {
   width: 22px;
   height: 22px;
@@ -83,4 +96,58 @@
 
 .dashboard-card:hover .dashboard-card__link {
   text-decoration: underline;
+}
+
+/* ---- Conference spotlight teaser ---- */
+.spotlight {
+  padding-block: var(--space-2xl);
+}
+
+.spotlight__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--space-md);
+  height: 420px;
+}
+
+.spotlight__photo {
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.spotlight__photo--main {
+  grid-row: 1 / 3;
+}
+
+.spotlight__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.spotlight__photo:hover img,
+.spotlight__photo:focus-visible img {
+  transform: scale(1.06);
+}
+
+.spotlight__cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .spotlight__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 140px;
+    height: auto;
+  }
+
+  .spotlight__photo--main {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
 }

@@ -23,3 +23,10 @@ build/
 # Env files
 .env
 .env.local
+
+# Raw camera originals synced locally via OneDrive — compressed, web-ready
+# copies live in assets/gallery/conecct-2026/ and are tracked instead.
+assets/images/_DSC*.JPG
+assets/images/_MG_*.JPG
+assets/images/IMG_*.MOV
+assets/images/IMG_*.HEIC

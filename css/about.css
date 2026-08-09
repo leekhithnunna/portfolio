@@ -76,14 +76,15 @@
   transform: translateY(-2px);
 }
 
+.about__interests li:nth-child(5n+1) { border-color: rgba(var(--color-accent-rgb), 0.4); }
+.about__interests li:nth-child(5n+2) { border-color: rgba(0, 184, 217, 0.4); }
+.about__interests li:nth-child(5n+3) { border-color: rgba(255, 107, 107, 0.4); }
+.about__interests li:nth-child(5n+4) { border-color: rgba(244, 163, 0, 0.4); }
+.about__interests li:nth-child(5n+5) { border-color: rgba(46, 204, 113, 0.4); }
+
 /* ---- Beyond the Code — two captioned narrative photos ---- */
 .about__beyond {
   margin-top: var(--space-2xl);
-}
-
-.about__beyond-title {
-  font-size: var(--fs-lg);
-  margin-bottom: var(--space-lg);
 }
 
 .about__beyond-grid {

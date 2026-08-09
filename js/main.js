@@ -9,6 +9,7 @@ import { initProjectsFilter } from './projectsFilter.js';
 import { initContactForm } from './contactForm.js';
 import { initLightboxTriggers } from './lightboxTriggers.js';
 import { initCertificateGallery } from './certificateGallery.js';
+import { initConecctGallery } from './conecctGallery.js';
 import { achievementsData } from './data/achievements.js';
 
 function renderAchievements() {
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initLightboxTriggers();
   initCertificateGallery();
+  initConecctGallery();
 
   // Reveal must init last so dynamically-rendered [data-reveal] nodes are observed.
   initScrollReveal();

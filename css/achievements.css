@@ -31,6 +31,11 @@
   border: 3px solid var(--color-accent);
 }
 
+.achievement-item:nth-of-type(5n+2)::before { border-color: var(--chip-2); }
+.achievement-item:nth-of-type(5n+3)::before { border-color: var(--chip-3); }
+.achievement-item:nth-of-type(5n+4)::before { border-color: var(--chip-4); }
+.achievement-item:nth-of-type(5n+5)::before { border-color: var(--chip-5); }
+
 .achievement-item__date {
   font-family: var(--font-mono);
   font-size: var(--fs-sm);

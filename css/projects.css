@@ -40,12 +40,20 @@
 .project-card {
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-accent);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   transition: transform var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
 }
+
+.project-card:nth-of-type(4n+2) { border-top-color: var(--chip-2); }
+.project-card:nth-of-type(4n+2) .project-card__category { color: var(--chip-2); }
+.project-card:nth-of-type(4n+3) { border-top-color: var(--chip-3); }
+.project-card:nth-of-type(4n+3) .project-card__category { color: var(--chip-3); }
+.project-card:nth-of-type(4n+4) { border-top-color: var(--chip-4); }
+.project-card:nth-of-type(4n+4) .project-card__category { color: var(--chip-4); }
 
 .project-card:hover {
   transform: translateY(-6px);

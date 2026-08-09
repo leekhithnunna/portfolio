@@ -6,6 +6,23 @@
   display: grid;
   grid-template-columns: minmax(240px, 380px) 1fr;
   gap: var(--space-2xl);
+  align-items: start;
+}
+
+.contact__info {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(360px circle at 100% 0%, rgba(var(--color-accent-2-rgb), 0.1), transparent 65%),
+    var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+}
+
+.contact__form {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
 }
 
 .contact__list {
