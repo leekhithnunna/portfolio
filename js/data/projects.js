@@ -26,7 +26,8 @@ export const projectsData = [
     category: 'NLP + Speech Processing',
     description:
       'Deep learning pipeline to classify code-switched Telugu–English viva responses by integrating speech ' +
-      'and textual features for multilingual academic evaluation.',
+      'and textual features for multilingual academic evaluation. Related paper, "Transformer-Based Semantic ' +
+      'Evaluation of Telugu–English Code-Mixed Viva Responses," presented at IEEE CONECCT 2026 — see Research.',
     tech: ['Python', 'NLP', 'Speech Processing', 'Deep Learning'],
     githubLink: null,
   },

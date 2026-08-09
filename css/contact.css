@@ -21,6 +21,27 @@
   gap: 2px;
 }
 
+.contact__list-item--linkedin {
+  flex-direction: row !important;
+  align-items: center;
+  gap: var(--space-sm) !important;
+}
+
+.contact__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+  flex-shrink: 0;
+}
+
+.contact__list-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .contact__label {
   font-family: var(--font-mono);
   font-size: var(--fs-sm);

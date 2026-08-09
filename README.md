@@ -28,13 +28,12 @@ https://leekhithnunna.github.io/portfolio/
 ```
 portfolio/
 ├── index.html               # Home dashboard — hero, intro video, links to every other page
-├── about.html                # About dashboard — bio + photo gallery
+├── about.html                # About dashboard — banner, portrait, bio, "Beyond the Code" photos
 ├── skills.html                # Skills dashboard
 ├── projects.html               # Projects dashboard — filterable cards + detail modal
 ├── achievements.html            # Achievements timeline + certificate/document gallery
 ├── research.html                # Research & publications dashboard
 ├── contact.html                  # Contact dashboard — info + validated form
-├── admin.html                     # Hidden admin page (visitor log viewer)
 ├── assets/
 │   ├── images/                     # favicon.ico, profile.jpg
 │   ├── gallery/                     # logo, intro video, personal photos, badges
@@ -44,7 +43,7 @@ portfolio/
 │   ├── layout.css                      # containers, section spacing
 │   ├── navbar.css | hero.css | dashboard.css | about.css | skills.css
 │   ├── projects.css | achievements.css | research.css | gallery.css
-│   ├── contact.css | footer.css | admin.css | visitorGate.css
+│   ├── contact.css | footer.css
 │   └── animations.css                    # keyframes + scroll-reveal states
 └── js/
     ├── main.js                            # entry point, initializes all modules
@@ -55,21 +54,24 @@ portfolio/
     ├── skillsAnimation.js                      # renders + animates skill tags
     ├── projectsFilter.js                        # renders cards, filter bar, detail modal
     ├── contactForm.js                            # client-side validation & UX feedback
-    ├── galleryView.js                             # about.html photo grid
+    ├── aboutMedia.js                              # click-to-enlarge for about.html photos
     ├── certificateGallery.js                       # achievements.html certificate grid
     ├── lightbox.js                                  # shared image lightbox
-    ├── visitorGate.js | admin.js
     └── data/
         ├── skills.js
         ├── projects.js
         ├── achievements.js
-        ├── gallery.js
         └── certificates.js
 ```
 
 Every module in `js/main.js` guards on `document.getElementById(...)` before running,
 so the same `main.js` entry point is safe to include on every page — each page only
 initializes the pieces whose markup is actually present.
+
+There is no visitor gate, admin page, or visitor-log feature — this was removed. Personal
+photos are placed contextually rather than in a single "gallery" grid: a wide LinkedIn-cover
+banner and formal portrait on `about.html`, two captioned candid photos in the "Beyond the
+Code" section, and a small avatar next to the LinkedIn link on `contact.html`.
 
 ## Running Locally
 
@@ -97,7 +99,6 @@ All editable content lives in `js/data/`:
 - `skills.js` — skill categories and tags
 - `projects.js` — project cards (set `githubLink` once repos are public)
 - `achievements.js` — achievements/certifications timeline
-- `gallery.js` — photo grid shown on `about.html`
 - `certificates.js` — certificate/document cards shown on `achievements.html`
 
 Swap `assets/images/profile.jpg` and `assets/images/favicon.ico`, or the files under

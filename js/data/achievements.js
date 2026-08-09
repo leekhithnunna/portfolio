@@ -8,9 +8,9 @@ export const achievementsData = [
   },
   {
     title: 'Research Paper Presentations',
-    org: 'IEEE / Springer Conferences — ICAISS, IC4S, IJCACI',
+    org: 'IEEE / Springer Conferences — ICAISS, IC4S, IJCACI, INSPECT, CONECCT, CML',
     date: '2025 – 2026',
-    description: 'Presented multiple research papers at international IEEE / Springer conferences.',
+    description: 'Presented multiple research papers at international IEEE / Springer conferences — see the Research page for full titles.',
   },
   {
     title: 'AI Mentorship Internship',

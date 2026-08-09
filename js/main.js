@@ -7,8 +7,7 @@ import { initScrollReveal } from './scrollReveal.js';
 import { initSkillsAnimation } from './skillsAnimation.js';
 import { initProjectsFilter } from './projectsFilter.js';
 import { initContactForm } from './contactForm.js';
-import { initVisitorGate } from './visitorGate.js';
-import { initGalleryView } from './galleryView.js';
+import { initLightboxTriggers } from './lightboxTriggers.js';
 import { initCertificateGallery } from './certificateGallery.js';
 import { achievementsData } from './data/achievements.js';
 
@@ -52,14 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAchievements();
   setFooterYear();
 
-  initVisitorGate();
   initNavbar();
   initThemeToggle();
   initTypingEffect();
   initSkillsAnimation();
   initProjectsFilter();
   initContactForm();
-  initGalleryView();
+  initLightboxTriggers();
   initCertificateGallery();
 
   // Reveal must init last so dynamically-rendered [data-reveal] nodes are observed.

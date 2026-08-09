@@ -6,6 +6,7 @@
   <title>About | Nunna Leekhith Sri Krishna</title>
   <meta name="description" content="About Nunna Leekhith Sri Krishna — AI &amp; Full-Stack Developer, B.Tech CSE (AI) student at Amrita School of Computing." />
   <meta name="author" content="Nunna Leekhith Sri Krishna" />
+  <meta property="og:image" content="assets/gallery/profile-alt.jpeg" />
 
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
 
@@ -62,10 +63,14 @@
         <h2 class="section__title reveal" data-reveal>About Me</h2>
         <p class="section__subtitle reveal" data-reveal>A little more about who I am</p>
 
+        <div class="about__banner reveal" data-reveal>
+          <img src="assets/gallery/linkedin-cover.png" alt="Leekhith Nunna — B.Tech AI &amp; ML" loading="lazy" width="1584" height="396" />
+        </div>
+
         <div class="about__grid">
           <div class="about__image reveal" data-reveal>
             <div class="about__image-frame">
-              <img src="assets/gallery/profile-portrait.jpg" alt="Portrait of Nunna Leekhith Sri Krishna" loading="lazy" width="360" height="360" />
+              <img src="assets/gallery/profile-alt.jpeg" alt="Portrait of Nunna Leekhith Sri Krishna" loading="lazy" width="360" height="360" />
             </div>
           </div>
 
@@ -91,8 +96,36 @@
           </div>
         </div>
 
-        <h3 class="section__title reveal" data-reveal style="font-size: var(--fs-lg); margin-top: var(--space-2xl);">Gallery</h3>
-        <div class="gallery__grid" id="gallery-grid"><!-- populated by galleryView.js --></div>
+        <div class="about__beyond">
+          <h3 class="about__beyond-title reveal" data-reveal>Beyond the Code</h3>
+          <div class="about__beyond-grid">
+            <figure class="about__beyond-card reveal" data-reveal>
+              <button
+                type="button"
+                class="about__beyond-photo"
+                data-lightbox-trigger="assets/gallery/profile-portrait.jpg"
+                data-lightbox-caption="Hiking through the fog at the tree roots trail"
+                aria-label="View larger photo"
+              >
+                <img src="assets/gallery/profile-portrait.jpg" alt="Nunna Leekhith Sri Krishna hiking among tree roots" loading="lazy" />
+              </button>
+              <figcaption class="about__beyond-caption">Off the screen: hiking through the fog on a weekend trail.</figcaption>
+            </figure>
+
+            <figure class="about__beyond-card reveal" data-reveal>
+              <button
+                type="button"
+                class="about__beyond-photo"
+                data-lightbox-trigger="assets/gallery/profile-casual.jpg"
+                data-lightbox-caption="Exploring a scrap-metal deer sculpture around campus"
+                aria-label="View larger photo"
+              >
+                <img src="assets/gallery/profile-casual.jpg" alt="Nunna Leekhith Sri Krishna next to a scrap-metal deer sculpture" loading="lazy" />
+              </button>
+              <figcaption class="about__beyond-caption">Curious about the little things — like a scrap-metal deer on the way to class.</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
   </main>

@@ -1,6 +1,7 @@
 // Certificate & document gallery — consumed by certificateGallery.js on achievements.html.
 // `image` renders as a lightbox-able thumbnail; `pdf` (when present) adds a "View PDF" link.
 // Entries with only a `pdf` (no image) render as a document card instead of a photo card.
+// Titles/descriptions were verified against the actual certificate contents.
 export const certificatesData = [
   {
     title: 'ALGOMANIA 3.0 Hackathon — 3rd Place',
@@ -11,55 +12,72 @@ export const certificatesData = [
     image: 'assets/certificates/teachnook-ai-internship-certificate.jpg',
   },
   {
-    title: 'INSPECT 2025 — IEEE Conference Certificate',
+    title: 'IEEE CONECCT 2026 — Paper Recognition',
+    pdf: 'assets/certificates/ieee-conecct-certificate.pdf',
+  },
+  {
+    title: 'Smart Water Surveillance System — IEEE INSPECT 2025',
     image: 'assets/certificates/inspect2025-certificate.jpg',
     pdf: 'assets/certificates/inspect2025-certificate.pdf',
   },
   {
-    title: 'IJCACI 2025 — Presentation Certificate',
+    title: 'Smart Water Surveillance System — Team Certificate (Rakesh Vemana), IEEE INSPECT 2025',
+    image: 'assets/certificates/team-presentation-certificate.jpg',
+  },
+  {
+    title: 'Forecasting Regional Climate Vulnerability — Team Certificate (Rakesh Vemana), IJCACI 2025',
     image: 'assets/certificates/ijcaci2025-presentation-certificate.jpg',
     pdf: 'assets/certificates/ijcaci2025-presentation-certificate.pdf',
   },
   {
-    title: 'CML 2026 — Certificate of Presentation (Springer)',
+    title: 'Forecasting Regional Climate Vulnerability — Research Poster (1 of 4), IJCACI 2025',
+    image: 'assets/certificates/ijcaci2025-research-poster-1.png',
+  },
+  {
+    title: 'Forecasting Regional Climate Vulnerability — Research Poster (2 of 4), IJCACI 2025',
+    image: 'assets/certificates/ijcaci2025-research-poster-2.png',
+  },
+  {
+    title: 'Forecasting Regional Climate Vulnerability — Research Poster (3 of 4), IJCACI 2025',
+    image: 'assets/certificates/ijcaci2025-research-poster-3.png',
+  },
+  {
+    title: 'Forecasting Regional Climate Vulnerability — Research Poster (4 of 4), IJCACI 2025',
+    image: 'assets/certificates/ijcaci2025-research-poster-4.png',
+  },
+  {
+    title: 'Smart Image Cleanup Tool — IC4S 2025 Presentation Certificate',
+    image: 'assets/certificates/smart-image-cleanup-certificate.jpg',
+    pdf: 'assets/certificates/fai-certificate.pdf',
+  },
+  {
+    title: 'Smooth Adaptive Synthetic Sampling Approach — CML 2026 (Springer)',
     image: 'assets/certificates/cml2026-presentation-certificate.jpg',
   },
   {
-    title: 'CML 2026 — Research Poster (1 of 4)',
-    image: 'assets/certificates/cml2026-research-poster-1.png',
+    title: 'Spirit of Innovation Award — Design Thinking Day, CAUSE 2026 (CMR University)',
+    image: 'assets/certificates/cause2026-spirit-of-innovation-award.jpg',
   },
   {
-    title: 'CML 2026 — Research Poster (2 of 4)',
-    image: 'assets/certificates/cml2026-research-poster-2.png',
-  },
-  {
-    title: 'CML 2026 — Research Poster (3 of 4)',
-    image: 'assets/certificates/cml2026-research-poster-3.png',
-  },
-  {
-    title: 'CML 2026 — Research Poster (4 of 4)',
-    image: 'assets/certificates/cml2026-research-poster-4.png',
-  },
-  {
-    title: 'Team Research Presentation Certificate',
-    image: 'assets/certificates/team-presentation-certificate.jpg',
-  },
-  {
-    title: 'CAUSE — Participation Certificate',
-    image: 'assets/certificates/cause-participation-certificate.jpg',
-  },
-  {
-    title: 'Fantom — Participation Certificate',
+    title: 'FantomCode 2026 — 24-Hour National Hackathon (Participation)',
     image: 'assets/certificates/fantom-participation-certificate.jpg',
   },
   {
-    title: 'Smart Image Cleanup Tool — Certificate',
-    image: 'assets/certificates/smart-image-cleanup-certificate.jpg',
-  },
-  {
-    title: 'Hired Certificate',
+    title: 'InAmigos Foundation — AI Web Development Internship (Selected via Internshala)',
     image: 'assets/certificates/hired-certificate.jpg',
     pdf: 'assets/certificates/hired-certificate.pdf',
+  },
+  {
+    title: 'InAmigos Foundation — Web Developer Internship (Completion Certificate)',
+    pdf: 'assets/certificates/iag-certificate.pdf',
+  },
+  {
+    title: 'Nayoda Internship — Full Stack Development (Completion Certificate)',
+    pdf: 'assets/certificates/nayoda-certificate.pdf',
+  },
+  {
+    title: 'Nayoda Internship — Offer Letter (Full Stack Development)',
+    pdf: 'assets/certificates/nyd-internship-offer-letter.pdf',
   },
   {
     title: 'DevOps Bootcamp — Certificate',
@@ -72,26 +90,6 @@ export const certificatesData = [
   {
     title: 'AWS Academy Cloud Foundations — Badge',
     image: 'assets/gallery/badge-aws-cloud-foundations.png',
-  },
-  {
-    title: 'FAI — Certificate',
-    pdf: 'assets/certificates/fai-certificate.pdf',
-  },
-  {
-    title: 'IAG — Certificate',
-    pdf: 'assets/certificates/iag-certificate.pdf',
-  },
-  {
-    title: 'IEEE CONECCT — Certificate',
-    pdf: 'assets/certificates/ieee-conecct-certificate.pdf',
-  },
-  {
-    title: 'Nayoda — Certificate',
-    pdf: 'assets/certificates/nayoda-certificate.pdf',
-  },
-  {
-    title: 'Nayoda Internship — Offer Letter',
-    pdf: 'assets/certificates/nyd-internship-offer-letter.pdf',
   },
   {
     title: 'IEEE INSPECT 2025 — Registration Receipt',
