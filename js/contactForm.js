@@ -1,6 +1,9 @@
-// Front-end-only contact form validation + UX feedback. No backend/network call.
+// Client-side validation, then hands off via a pre-filled mailto: link — the
+// same fallback pattern already used by the "Request Resume" button. No
+// backend, no third-party form service, no localStorage/sessionStorage.
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const CONTACT_EMAIL = 'leekhithnunna@gmail.com';
 
 export function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -47,12 +50,17 @@ export function initContactForm() {
       return;
     }
 
-    setStatus('Sending…', '');
-    window.setTimeout(() => {
-      setStatus("Thanks! Your message has been noted — I'll get back to you soon.", 'success');
-      form.reset();
-      Object.values(fields).forEach(({ input }) => input.closest('.form__group').classList.remove('has-error'));
-    }, 600);
+    const name = fields.name.input.value.trim();
+    const email = fields.email.input.value.trim();
+    const message = fields.message.input.value.trim();
+
+    const subject = `Portfolio contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const mailtoUrl =
+      `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+    setStatus('Opening your email app — send it from there to reach me.', 'success');
   });
 
   function validateField(name) {
