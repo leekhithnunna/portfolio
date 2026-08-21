@@ -2,6 +2,7 @@
 // into view (staggered) using IntersectionObserver when it scrolls into frame.
 
 import { skillsData } from './data/skills.js';
+import { skillIcons } from './data/skillIcons.js';
 
 export function initSkillsAnimation() {
   const container = document.getElementById('skills-container');
@@ -22,8 +23,28 @@ export function initSkillsAnimation() {
     group.items.forEach((skill, index) => {
       const tag = document.createElement('span');
       tag.className = 'skill-tag';
-      tag.textContent = skill;
       tag.style.setProperty('--tag-index', index);
+
+      const badge = document.createElement('span');
+      badge.className = 'skill-tag__icon';
+      if (skill.logo) {
+        const img = document.createElement('img');
+        img.src = skill.logo;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.width = 18;
+        img.height = 18;
+        badge.appendChild(img);
+      } else {
+        badge.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${skillIcons[skill.icon] || ''}</svg>`;
+      }
+      tag.appendChild(badge);
+
+      const label = document.createElement('span');
+      label.className = 'skill-tag__label';
+      label.textContent = skill.name;
+      tag.appendChild(label);
+
       tagList.appendChild(tag);
     });
 
