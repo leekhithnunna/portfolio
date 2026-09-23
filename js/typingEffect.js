@@ -1,10 +1,10 @@
 // Animated typing/erasing tagline in the hero section.
 
 const PHRASES = [
-  'AI & Full-Stack Developer',
+  'AI/ML Engineer',
+  'Deep Learning Researcher',
   'NLP Enthusiast',
-  'Computer Vision Explorer',
-  'Applied AI Researcher',
+  'Computer Vision Builder',
 ];
 
 const TYPE_SPEED = 70;

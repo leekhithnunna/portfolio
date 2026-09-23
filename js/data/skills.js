@@ -7,19 +7,6 @@ const devicon = (slug) =>
 
 export const skillsData = [
   {
-    category: 'Languages',
-    items: [
-      { name: 'Python', logo: devicon('python') },
-      { name: 'C', logo: devicon('c') },
-      { name: 'Java', logo: devicon('java') },
-      { name: 'JavaScript', logo: devicon('javascript') },
-      { name: 'TypeScript', logo: devicon('typescript') },
-      { name: 'HTML', logo: devicon('html5') },
-      { name: 'CSS', logo: devicon('css3') },
-      { name: 'MySQL', logo: devicon('mysql') },
-    ],
-  },
-  {
     category: 'AI / ML',
     items: [
       { name: 'Scikit-Learn', logo: devicon('scikitlearn') },
@@ -32,13 +19,22 @@ export const skillsData = [
     ],
   },
   {
-    category: 'Frameworks & Libraries',
+    category: 'AI Frameworks & Tooling',
     items: [
-      { name: 'React', logo: devicon('react') },
-      { name: 'Node.js', logo: devicon('nodejs') },
       { name: 'Streamlit', logo: devicon('streamlit') },
       { name: 'LangChain', logo: 'https://cdn.simpleicons.org/langchain' },
       { name: 'Groq', icon: 'groq' },
+    ],
+  },
+  {
+    category: 'Languages',
+    items: [
+      { name: 'Python', logo: devicon('python') },
+      { name: 'C', logo: devicon('c') },
+      { name: 'Java', logo: devicon('java') },
+      { name: 'JavaScript', logo: devicon('javascript') },
+      { name: 'TypeScript', logo: devicon('typescript') },
+      { name: 'MySQL', logo: devicon('mysql') },
     ],
   },
   {
@@ -49,6 +45,15 @@ export const skillsData = [
       { name: 'VS Code', logo: devicon('vscode') },
       { name: 'MATLAB', logo: devicon('matlab') },
       { name: 'Arduino IDE', logo: devicon('arduino') },
+    ],
+  },
+  {
+    category: 'Deployment & Web',
+    items: [
+      { name: 'React', logo: devicon('react') },
+      { name: 'Node.js', logo: devicon('nodejs') },
+      { name: 'HTML', logo: devicon('html5') },
+      { name: 'CSS', logo: devicon('css3') },
     ],
   },
   {
