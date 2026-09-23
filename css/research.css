@@ -58,6 +58,22 @@
   text-decoration: underline;
 }
 
+/* ---- Tags (mirrors .project-card__tags/.project-card__tag) ---- */
+.research__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.research__tag {
+  font-size: 0.75rem;
+  padding: 2px var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: rgba(var(--color-accent-rgb), 0.08);
+  color: var(--color-text-primary);
+}
+
 /* ---- Featured entry ---- */
 .research__item--featured {
   grid-column: 1 / -1;
